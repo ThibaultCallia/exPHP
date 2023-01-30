@@ -1,6 +1,7 @@
 <?php
 
 $message = "ASK 8 BALL";
+// If session ongoing, change the message to "ASK AGAIN"
 
 
 $array = array(
@@ -33,13 +34,6 @@ $array = array(
 <head>
     <title>Magicccc 8</title>
 </head>
-
-
-<?php
-if (session_status() === PHP_SESSION_ACTIVE) {
-    echo "true";
-}
-?>
 
 
 <body>

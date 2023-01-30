@@ -15,9 +15,11 @@ try {
 function getDbInfo($sort)
 {
     global $pdo;
-
-    $stmt = $pdo->prepare("SELECT * FROM `230130_soorten` ORDER BY " . $sort . " ASC");
+    // I chose to use a ternary operator to determine the direction of the sort. Seemed more logical to sort DESC when on views.
+    $direction = $sort == 'views' ? ' DESC' : ' ASC';
+    $stmt = $pdo->prepare("SELECT * FROM `230130_soorten` ORDER BY " . $sort . $direction);
     $stmt->execute();
+
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 

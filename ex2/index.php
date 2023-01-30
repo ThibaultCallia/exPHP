@@ -67,17 +67,14 @@ $categories = getCategories();
                 // Loop through the data and display it in the table
                 foreach ($data as $dataItem) {
                 ?>
-
                     <tr>
                         <td><a href="detail.php?id=<?= $dataItem["id"] ?>"><?= $dataItem["name"] ?></a></td>
                         <td><?= $dataItem["category"] ?></td>
                         <td><?= $dataItem["views"] ?></td>
                     </tr>
-
                 <?php
                 }
                 ?>
-
             </tbody>
         </table>
     </div>
