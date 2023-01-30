@@ -2,6 +2,9 @@
 
 $message = "ASK 8 BALL";
 // If session ongoing, change the message to "ASK AGAIN"
+if (isset($_POST['submit'])) {
+    $message = "ASK AGAIN";
+}
 
 
 $array = array(
@@ -24,7 +27,8 @@ $array = array(
     "My reply is no.",
     "My sources say no.",
     "Outlook not so good.",
-    "Very doubtful."
+    "Very doubtful.",
+    "Kristof Says No",
 ); ?>
 
 
