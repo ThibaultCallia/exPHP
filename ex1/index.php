@@ -1,11 +1,13 @@
 <?php
 
+// Create a session 
+session_start();
+
 $message = "ASK 8 BALL";
 // If session ongoing, change the message to "ASK AGAIN"
 if (isset($_POST['submit'])) {
     $message = "ASK AGAIN";
 }
-
 
 $array = array(
     "It is certain.",
@@ -39,16 +41,13 @@ $array = array(
     <title>Magicccc 8</title>
 </head>
 
-
 <body>
     <div class="container">
         <form action="" method="post">
             <input type="submit" name="submit" value="<?= $message ?>">
         </form>
-
         <?php
-        // Create a session 
-        session_start();
+
         if (isset($_POST['submit'])) {
             // will loop and find a random element until the random element is not the same as the last element
             do {
